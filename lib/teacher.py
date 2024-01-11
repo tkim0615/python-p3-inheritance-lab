@@ -1,7 +1,7 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
 
 from user import User
-import ipdb
+
 import random
 knowledge = [
     "str is a data type in Python",
@@ -14,14 +14,11 @@ knowledge = [
     "pytest -x flag to fail fast",
 ]
 class Teacher(User):
-
     def __init__(self, first_name, last_name):
         super().__init__(first_name, last_name)
         self.knowledge = knowledge
+    def teach(self):
+        return self.knowledge[random.randint(0, len(self.knowledge)-1)]
 
-    def teach(self ):
-        return self.knowledge[random.randint(0, len(self.knowledge))-1]
-    
-miss_kim = Teacher('jamie', 'kim')
-# print(miss_kim.first_name, miss_kim.teach())
-# ipdb.set_trace()
+
+teacher1= Teacher('Andy', 'Mac')        
